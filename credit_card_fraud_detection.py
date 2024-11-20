@@ -43,13 +43,15 @@ input_df = pd.DataFrame(input_data)
 st.subheader('Input Data')
 st.write(input_df)
 
-# Prediction
+# Prediction button
 if st.button('Predict'):
     prediction = model.predict(input_df)
     prediction_prob = model.predict_proba(input_df)
-    
-if prediction[0] == 1: 
-    st.success(f"The model predicts that this is a Fraud {prediction_prob[0][1] * 100:.2f}% probability.")
-else:
-    st.error(f"The model predicts that this is not a fraud {prediction_prob[0][0] * 100:.2f}% probability.")
 
+    # Display prediction results
+    if prediction[0] == 1: 
+        st.success(f"The model predicts that this is a Fraud with {prediction_prob[0][1] * 100:.2f}% probability.")
+    else:
+        st.error(f"The model predicts that this is not a Fraud with {prediction_prob[0][0] * 100:.2f}% probability.")
+else:
+    st.write("Click 'Predict' to see the result.")
