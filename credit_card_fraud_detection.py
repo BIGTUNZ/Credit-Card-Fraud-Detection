@@ -16,23 +16,24 @@ model = joblib.load("credit_card_fraud_model.pkl")
 st.header('Input Features')
 
 # Feature sliders with appropriate ranges based on your dataset
-v11 = st.slider('V11', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
-v4 = st.slider('V4', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
-v3 = st.slider('V3', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
-v17 = st.slider('V17', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
 v14 = st.slider('V14', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
+v4 = st.slider('V4', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
 v12 = st.slider('V12', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
 v10 = st.slider('V10', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
+v17 = st.slider('V17', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
+v11 = st.slider('V11', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
+v3 = st.slider('V3', min_value=-20.0, max_value=20.0, value=0.0, step=0.1)
+
 
 # Create a dictionary for the model input
 input_data = {
-    'V11': [v11],
-    'V4': [v4],
-    'V3': [v3],
-    'V17': [v17],
     'V14': [v14],
+    'V4': [v4],
     'V12': [v12],
-    'V10': [v10]
+    'V10': [v10],
+    'V17': [v17],
+    'V11': [v11],
+    'V3': [v3]
 }
 
 
