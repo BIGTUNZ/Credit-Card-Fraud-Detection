@@ -10,7 +10,7 @@ import joblib
 st.title('Credit Card Fraud Detection')
 
 # Load the trained model
-model = joblib.load("credit_card_model.pkl")  
+model = joblib.load("credit_card_fraud_model.pkl")  
 
 # Input features from the user
 st.header('Input Features')
